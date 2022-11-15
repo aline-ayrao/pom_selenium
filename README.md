@@ -1,2 +1,2 @@
-# automacao_pageobject
+# pom_selenium
 Page Object Model
