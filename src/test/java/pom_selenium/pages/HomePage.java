@@ -9,26 +9,26 @@ public class HomePage {
     String SENHA = "//input[@id='inputPassword']";
     String CONFIRM_SENHA = "//input[@id='inputPasswordConfirmation']";
     String CRIAR_SALDO = "//input[@id='toggleAddBalance']";
-    String CADASTRAR = "//input[@id='btnRegister']";
+    String CADASTRAR = "//a[@id='btnRegister']";
 
     public HomePage(WebDriver driverParametro){
         this.driver = driverParametro;
     }
     
-    public void preencherEmail(){
-        driver.findElement(By.xpath(EMAIL)).sendKeys("teste@gmail.com");
+    public void preencherEmail(String email){
+        driver.findElement(By.xpath(EMAIL)).sendKeys(email);
     }
 
-    public void preencherNome(){
-        driver.findElement(By.xpath(NOME)).sendKeys("Teste Qa");
+    public void preencherNome(String nome){
+        driver.findElement(By.xpath(NOME)).sendKeys(nome);
     }
 
-    public void preencherSenha(){
-        driver.findElement(By.xpath(SENHA)).sendKeys("teste");
+    public void preencherSenha(String senha){
+        driver.findElement(By.xpath(SENHA)).sendKeys(senha);
     }
 
-    public void preencherConfirmaSenha(){
-        driver.findElement(By.xpath(CONFIRM_SENHA)).sendKeys("teste");;
+    public void preencherConfirmaSenha(String confirma){
+        driver.findElement(By.xpath(CONFIRM_SENHA)).sendKeys(confirma);;
     }
     
     public void clicarCriarComSaldo(){

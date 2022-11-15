@@ -17,13 +17,21 @@ public class TesteCadastramento {
     @Test
     public void testePositivoCadastro(){
         homePage.clicarCadastrar();
-        homePage.preencherEmail();
-        homePage.preencherNome();
-        homePage.preencherSenha();
-        homePage.preencherConfirmaSenha();
+        homePage.preencherEmail("teste@gmail.com");
+        homePage.preencherNome("Teste Qa");
+        homePage.preencherSenha("teste");
+        homePage.preencherConfirmaSenha("teste");
         homePage.clicarCriarComSaldo();
         homePage.clicarCadastrar();
-        Assert.assertTrue(driver.getPageSource().contains("foi criada com sucesso"));
+        validarMsgNaTela("foi criada com sucesso");
+
+    }
+
+    @Test
+    public void testeCadastroVazio(){
+        homePage.clicarCadastrar();
+        homePage.clicarCadastrar();
+        validarMsgNaTela("Nome não pode ser vazio");
 
     }
 
@@ -31,6 +39,10 @@ public class TesteCadastramento {
     public void finalizar(){
         Thread.sleep(5000);
         driver.quit();
+    }
+
+    public void validarMsgNaTela (String msg){
+        Assert.assertTrue(driver.getPageSource().contains(msg));
     }
 
 }
