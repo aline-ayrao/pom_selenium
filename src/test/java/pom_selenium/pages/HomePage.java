@@ -10,6 +10,7 @@ public class HomePage {
     String CONFIRM_SENHA = "//input[@id='inputPasswordConfirmation']";
     String CRIAR_SALDO = "//input[@id='toggleAddBalance']";
     String CADASTRAR = "//a[@id='btnRegister']";
+    String FECHAR = "a[contains(text(),'fechar')]";
 
     public HomePage(WebDriver driverParametro){
         this.driver = driverParametro;
@@ -37,6 +38,10 @@ public class HomePage {
 
     public void clicarCadastrar(){
         driver.findElement(By.xpath(CADASTRAR)).click();
+    }
+
+    public void clicarFechar(){
+        driver.findElement(By.xpath(FECHAR)).click();
     }
 
 }
